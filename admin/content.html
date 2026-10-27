@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content | ARC demo CMS</title>
+<meta name="description" content="Demo content management system for the Adult Rape Clinic website prototype (Advanced CMS Package).">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/data.js" defer></script>
+<script src="../js/admin.js" defer></script>
+</head>
+<body data-page="content">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-banner" role="region" aria-label="Demo notice">
+  <p>Demo CMS: changes are saved only in this browser. No login, nothing is sent to a server.</p>
+</div>
+<div class="admin-layout">
+  <header class="sidebar">
+    <a class="admin-brand" href="index.html">ARC <small>Content manager</small></a>
+    <nav aria-label="CMS">
+      <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="content.html" aria-current="page">Content</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="activity.html">Activity log</a></li>
+          <li><a href="../index.html">View site</a></li>
+      </ul>
+    </nav>
+    <p class="who">Signed in as Demo Editor (demo only, no real account)</p>
+  </header>
+  <main class="admin-main" id="main" tabindex="-1">
+    <h1>Content</h1>
+    <p class="muted">Edit the details used across the website. Update once, and it changes everywhere.</p>
+    <div class="tablist" role="tablist" aria-label="Content type">
+      <button class="tab" type="button" role="tab" id="tab-hotlines" aria-controls="panel-hotlines" aria-selected="true">Hotlines</button>
+      <button class="tab" type="button" role="tab" id="tab-locations" aria-controls="panel-locations" aria-selected="false" tabindex="-1">Locations</button>
+      <button class="tab" type="button" role="tab" id="tab-stats" aria-controls="panel-stats" aria-selected="false" tabindex="-1">Statistics</button>
+    </div>
+    <section class="panel" role="tabpanel" id="panel-hotlines" aria-labelledby="tab-hotlines" tabindex="0">
+      <p>The first line is the 24-hour toll-free number shown in the emergency bar at the top of every page.</p>
+      <form id="form-hotlines" novalidate></form>
+    </section>
+    <section class="panel" role="tabpanel" id="panel-locations" aria-labelledby="tab-locations" tabindex="0" hidden>
+      <form id="form-locations" novalidate></form>
+    </section>
+    <section class="panel" role="tabpanel" id="panel-stats" aria-labelledby="tab-stats" tabindex="0" hidden>
+      <p>Values in square brackets, like [Figure], show as placeholders on the site.</p>
+      <form id="form-stats" novalidate></form>
+    </section>
+    <section class="panel" aria-labelledby="reset-h">
+      <h2 id="reset-h">Reset the demo</h2>
+      <p>Put all content back to the original prototype defaults.</p>
+      <button class="btn btn--danger" type="button" id="reset-demo">Reset demo data</button>
+    </section>
+    <noscript><p class="panel">The demo CMS needs JavaScript to run.</p></noscript>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activity log | ARC demo CMS</title>
+<meta name="description" content="Demo content management system for the Adult Rape Clinic website prototype (Advanced CMS Package).">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/data.js" defer></script>
+<script src="../js/admin.js" defer></script>
+</head>
+<body data-page="activity">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-banner" role="region" aria-label="Demo notice">
+  <p>Demo CMS: changes are saved only in this browser. No login, nothing is sent to a server.</p>
+</div>
+<div class="admin-layout">
+  <header class="sidebar">
+    <a class="admin-brand" href="index.html">ARC <small>Content manager</small></a>
+    <nav aria-label="CMS">
+      <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="activity.html" aria-current="page">Activity log</a></li>
+          <li><a href="../index.html">View site</a></li>
+      </ul>
+    </nav>
+    <p class="who">Signed in as Demo Editor (demo only, no real account)</p>
+  </header>
+  <main class="admin-main" id="main" tabindex="-1">
+    <h1>Activity log</h1>
+    <p class="muted">Every change made in this demo, newest first. Stored in this browser only.</p>
+    <section class="panel" aria-labelledby="log-h">
+      <h2 id="log-h">Changes</h2>
+      <ul class="log" id="log"></ul>
+      <div class="btn-row"><button class="btn btn--danger" type="button" id="clear-log">Clear activity log</button></div>
+    </section>
+    <noscript><p class="panel">The demo CMS needs JavaScript to run.</p></noscript>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

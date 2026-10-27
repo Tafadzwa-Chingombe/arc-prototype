@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts | ARC demo CMS</title>
+<meta name="description" content="Demo content management system for the Adult Rape Clinic website prototype (Advanced CMS Package).">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/data.js" defer></script>
+<script src="../js/admin.js" defer></script>
+</head>
+<body data-page="posts">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-banner" role="region" aria-label="Demo notice">
+  <p>Demo CMS: changes are saved only in this browser. No login, nothing is sent to a server.</p>
+</div>
+<div class="admin-layout">
+  <header class="sidebar">
+    <a class="admin-brand" href="index.html">ARC <small>Content manager</small></a>
+    <nav aria-label="CMS">
+      <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="posts.html" aria-current="page">Posts</a></li>
+          <li><a href="activity.html">Activity log</a></li>
+          <li><a href="../index.html">View site</a></li>
+      </ul>
+    </nav>
+    <p class="who">Signed in as Demo Editor (demo only, no real account)</p>
+  </header>
+  <main class="admin-main" id="main" tabindex="-1">
+    <h1>Posts</h1>
+    <p class="muted">Workflow: Draft, then In review, then Published. Only published posts appear on the News page.</p>
+    <p id="review-count" role="status"></p>
+    <section class="panel" aria-labelledby="posts-h">
+      <h2 id="posts-h">All posts</h2>
+      <div class="table-wrap" role="region" aria-label="Posts table (scrolls sideways on small screens)" tabindex="0">
+        <table>
+          <caption class="visually-hidden">Posts with status, date and actions</caption>
+          <thead><tr><th scope="col">Title</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="posts-body"></tbody>
+        </table>
+      </div>
+      <div class="btn-row"><button class="btn" type="button" id="new-post">New post</button></div>
+    </section>
+    <section id="checker" class="panel checker" tabindex="-1" aria-labelledby="checker-title" hidden></section>
+    <section class="panel" id="editor" aria-labelledby="editor-title" hidden>
+      <h2 id="editor-title">New post</h2>
+      <form id="post-form" novalidate>
+        <div class="field">
+          <label for="pe-title">Title (required)</label>
+          <input id="pe-title" name="title" type="text">
+        </div>
+        <div class="field">
+          <label for="pe-excerpt">Short summary</label>
+          <span class="hint" id="pe-excerpt-hint">One or two sentences shown on the News page.</span>
+          <input id="pe-excerpt" name="excerpt" type="text" aria-describedby="pe-excerpt-hint">
+        </div>
+        <div class="field">
+          <label for="pe-body">Body</label>
+          <span class="hint" id="pe-body-hint">Leave a blank line between paragraphs. Start a line with "## " for a heading.</span>
+          <textarea id="pe-body" name="body" aria-describedby="pe-body-hint"></textarea>
+        </div>
+        <fieldset>
+          <legend>Image (optional)</legend>
+          <div class="field">
+            <label for="pe-image">Choose an image</label>
+            <span class="hint" id="pe-image-hint">Demo only: the file is not uploaded, only its name is kept.</span>
+            <input id="pe-image" name="image" type="file" accept="image/*" aria-describedby="pe-image-hint pe-image-current">
+            <p class="muted" id="pe-image-current" style="margin:8px 0 0">No image selected.</p>
+            <button type="button" class="btn btn--sm btn--ghost" id="pe-image-remove" hidden>Remove image</button>
+          </div>
+          <div class="field">
+            <label for="pe-alt">Alt text</label>
+            <span class="hint" id="pe-alt-hint">Describe what the image shows for people who cannot see it. Required if you add an image.</span>
+            <input id="pe-alt" name="alt" type="text" aria-describedby="pe-alt-hint">
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="pe-publish">Publish date and time (optional)</label>
+          <span class="hint" id="pe-publish-hint">If this is in the future, the post shows as "Scheduled" after approval and appears on the site at that time.</span>
+          <input id="pe-publish" name="publishAt" type="datetime-local" aria-describedby="pe-publish-hint">
+        </div>
+        <div class="btn-row">
+          <button class="btn" type="submit">Submit for review</button>
+          <button class="btn btn--ghost" type="button" id="save-draft">Save draft</button>
+          <button class="btn btn--ghost" type="button" id="run-check">Check accessibility</button>
+          <button class="btn btn--ghost" type="button" id="cancel-edit">Cancel</button>
+        </div>
+      </form>
+    </section>
+    <noscript><p class="panel">The demo CMS needs JavaScript to run.</p></noscript>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

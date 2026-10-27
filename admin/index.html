@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | ARC demo CMS</title>
+<meta name="description" content="Demo content management system for the Adult Rape Clinic website prototype (Advanced CMS Package).">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/data.js" defer></script>
+<script src="../js/admin.js" defer></script>
+</head>
+<body data-page="dashboard">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-banner" role="region" aria-label="Demo notice">
+  <p>Demo CMS: changes are saved only in this browser. No login, nothing is sent to a server.</p>
+</div>
+<div class="admin-layout">
+  <header class="sidebar">
+    <a class="admin-brand" href="index.html">ARC <small>Content manager</small></a>
+    <nav aria-label="CMS">
+      <ul>
+          <li><a href="index.html" aria-current="page">Dashboard</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="activity.html">Activity log</a></li>
+          <li><a href="../index.html">View site</a></li>
+      </ul>
+    </nav>
+    <p class="who">Signed in as Demo Editor (demo only, no real account)</p>
+  </header>
+  <main class="admin-main" id="main" tabindex="-1">
+    <h1>Dashboard</h1>
+    <p class="muted">This shows how ARC staff would manage the website without technical help.</p>
+    <ul class="tiles">
+      <li class="tile"><span class="tile-value" id="tile-review">0</span><span class="tile-label">Posts awaiting review</span><a href="posts.html">Review posts</a></li>
+      <li class="tile"><span class="tile-value" id="tile-updated">None</span><span class="tile-label">Last update</span><span class="muted" id="tile-updated-note">No changes yet.</span></li>
+      <li class="tile"><span class="tile-value" id="tile-a11y">0</span><span class="tile-label">Accessibility warnings</span><a href="posts.html">Check posts</a></li>
+    </ul>
+    <section class="panel" aria-labelledby="quick">
+      <h2 id="quick">Common tasks</h2>
+      <ul>
+        <li><a href="content.html">Update a hotline number</a> (changes it on every page, including the emergency bar)</li>
+        <li><a href="content.html">Edit clinic addresses and opening hours</a></li>
+        <li><a href="posts.html">Write, review and publish a news post</a></li>
+      </ul>
+    </section>
+    <section class="panel" aria-labelledby="recent-h">
+      <h2 id="recent-h">Recent activity</h2>
+      <ul class="log" id="recent"></ul>
+      <p style="margin-top:16px"><a href="activity.html">Full activity log</a></p>
+    </section>
+    <noscript><p class="panel">The demo CMS needs JavaScript to run.</p></noscript>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
