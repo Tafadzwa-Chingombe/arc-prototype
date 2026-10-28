@@ -66,7 +66,7 @@ All colours, type sizes and spacing are CSS custom properties on `:root` in `css
 
 - **Palette (placeholder):** primary `#4B2E83`, emergency `#B3261E`.
 - **Contrast change:** the specified teal accent `#0E8C8C` is only 4.1:1 on white, below the 4.5:1 needed for text. It was darkened to `#0B7373` (5.7:1).
-- **Dark mode:** follows the device's `prefers-color-scheme` setting and uses the same tokens.
+- **Light theme only:** the site always uses the light theme, to match the Figma designs, even when the device is in dark mode.
 - **Type:** system font stack, 18px base, line height 1.6, line length capped at about 70 characters.
 - **Breakpoints:** mobile first, with changes at 640px, 960px and 1200px. The main nav collapses into a menu below 1200px so all eight items fit without crowding.
 - **Size:** touch targets are at least 44 × 44px. Focus is shown with a 3px outline plus a yellow halo. `prefers-reduced-motion` is respected.
@@ -96,7 +96,7 @@ These checks ran automatically (Playwright + axe-core) on every page:
 - [x] Changing the primary hotline in the CMS updates the emergency bar on all 15 public pages.
 - [x] A post only appears on news.html after it is approved and published.
 - [x] The accessibility checker blocks a post with an image but no alt text.
-- [x] axe-core (WCAG 2.0/2.1/2.2 A and AA, plus best practice) finds no violations on any page, in light or dark mode.
+- [x] axe-core (WCAG 2.0/2.1/2.2 A and AA, plus best practice) finds no violations on any page.
 - [x] Keyboard: the mobile menu traps focus and returns it, the CMS tabs work with the arrow keys, and focused elements are never hidden.
 - [x] Pages reflow at 320px, and at 200% text size, with no horizontal scrolling. Pinch-zoom is never disabled.
 - [x] The home page is well under 300 KB (about 80 KB in total, HTML + CSS + JS).
